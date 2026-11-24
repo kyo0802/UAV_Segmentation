@@ -1,9 +1,9 @@
 model:
   name: segformer
   variant: b2
-  pretrained: false
-  encoder_weights: null
-image_size: 512
+  pretrained: true
+  encoder_weights: outputs/pretrained/nvidia-mit-b2.bin
+image_size: [640, 480]  # 寬、高
 training:
   epochs: 40
   batch_size: auto
