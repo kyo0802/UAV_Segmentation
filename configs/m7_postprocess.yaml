@@ -1,0 +1,9 @@
+fusion_run: outputs/logs/20261125T065030Z_cross_model_m7_evaluate_d71c9a
+b2_percent: 40
+split_seed: 42
+calibration_images: 600
+holdout_images: 200
+global_threshold_percent: [0, 40, 5]
+class_threshold_percent: [10, 70, 5]
+weight_percent: [50, 200, 10]
+max_coordinate_passes: 3

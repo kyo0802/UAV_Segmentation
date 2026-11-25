@@ -129,7 +129,9 @@ def evaluate(n, folder, members, pairs, references, b4_reference, tolerance):
     write_rows(folder / "classes.csv", classes)
     checks = dict(
         b2_m7=compare_reference(summaries[100], references["M7"], tolerance),
-        b4_512_hflip=compare_reference(b4_single.summary(), references["B4"], tolerance),
+        b4_512_hflip=(compare_reference(b4_single.summary(), references["B4"], tolerance)
+                      if "B4" in references else dict(status="unverified",
+                      reason="The historical B4 reference belongs to a different checkpoint")),
         b4_m7=(compare_reference(summaries[0], b4_reference, tolerance) if b4_reference else
                dict(status="unverified", reason="No independent B4 five-view M7 reference supplied")),
     )
@@ -148,6 +150,8 @@ def main():
                     help="Independent same-split B4 M7 JSON with image_miou and global_miou")
     sub = actions.add_parser("submit")
     sub.add_argument("--b2-percent", type=int, choices=GRID, required=True)
+    for action in (ev, sub):
+        action.add_argument("--b4-checkpoint", type=Path, help="Use an alternate trained B4 best.pt")
     args = parser.parse_args()
     cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
     spec = yaml.safe_load(Path(cfg["m7_config"]).read_text(encoding="utf-8"))
@@ -155,10 +159,12 @@ def main():
     split = json.loads((reference_run / "split.json").read_text(encoding="utf-8"))
     if len(split["validation"]) != 800 or len(set(split["validation"])) != 800:
         raise ValueError("Expected the fixed 800-image validation split")
-    checkpoints = dict(b2=spec["checkpoints"]["B7"], b4=cfg["b4_checkpoint"])
+    checkpoints = dict(b2=spec["checkpoints"]["B7"], b4=str(args.b4_checkpoint or cfg["b4_checkpoint"]))
     b4_reference = None
     if args.action == "evaluate":
         references = {row["method"]: row for row in read_rows(reference_run / "comparison.csv")}
+        if Path(checkpoints["b4"]).resolve() != Path(cfg["b4_checkpoint"]).resolve():
+            del references["B4"]
         if args.b4_m7_reference:
             b4_reference = json.loads(args.b4_m7_reference.read_text(encoding="utf-8"))
             for key in ("image_miou", "global_miou"):
