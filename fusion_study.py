@@ -27,22 +27,43 @@ def notebook_definitions():
 @torch.inference_mode()
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument("action", choices=["all","multiscale","ensemble","submit","final","final-submit"])
+    parser.add_argument("action", choices=["all","multiscale","ensemble","submit","final","final-submit","b4","b4-submit"])
+    parser.add_argument("--b4-checkpoint",type=Path,help="Trained SegFormer-B4 best.pt")
     parser.add_argument("--method",help="Submission method, e.g. F4")
     args=parser.parse_args()
     final=args.action in {"final","final-submit"}
-    submit=args.action in {"submit","final-submit"}
-    config_path=Path("configs/fusion_final.yaml" if final else "configs/fusion.yaml")
+    b4=args.action in {"b4","b4-submit"}
+    submit=args.action in {"submit","final-submit","b4-submit"}
+    config_path=Path("configs/fusion_final.yaml" if final or b4 else "configs/fusion.yaml")
     cfg=yaml.safe_load(config_path.read_text(encoding="utf8"))
     methods=dict(cfg["methods"])
     methods.update({key:{key:1} for key in cfg["views"]})
+    if b4:
+        path=args.b4_checkpoint
+        if path is None:
+            candidates=[Path("outputs/checkpoints")/s.parent.name/"best.pt"
+                        for s in Path("outputs/logs").glob("*_b10_mitb4_512_80ep_*/summary.json")]
+            if len(candidates)!=1:
+                parser.error("Train B10 first, or select its best.pt with --b4-checkpoint")
+            path=candidates[0]
+        if not path.is_file():
+            parser.error(f"Missing trained B4 checkpoint: {path}")
+        m7=cfg["methods"]["M7"]
+        cfg["views"]={key:cfg["views"][key] for key in m7}
+        cfg["views"]["MIT_B4"]=["MIT_B4",512,512]
+        cfg["checkpoints"]={"B7":cfg["checkpoints"]["B7"],"MIT_B4":str(path)}
+        methods={"M7":m7,"B4":{"MIT_B4":1.0}}
+        for label,share in [("mix75",0.75),("mix50",0.50)]:
+            methods[label]={**{key:w*share for key,w in m7.items()},"MIT_B4":1-share}
+        cfg["methods"]=methods.copy()
+        cfg.pop("baselines",None)
     if final and (len(methods)!=40 or len(cfg["views"])!=10):
         parser.error("Final study requires 40 configurations and 10 unique views")
     if submit:
         if args.method not in methods:
             parser.error("Select a configured --method")
         methods={args.method:methods[args.method]}
-    elif args.action not in {"all","final"}:
+    elif args.action not in {"all","final","b4"}:
         prefix="F" if args.action=="multiscale" else "E"
         refs="ABCDH" if prefix=="F" else "AUV"
         methods={k:v for k,v in methods.items() if k.startswith(prefix) or k in refs}
@@ -62,7 +83,7 @@ def main():
             if split is not None:
                 assert split==state["split"]
             split=state["split"]
-            assert state["config"]["model"]["variant"]=="b2"
+            assert state["config"]["model"]["variant"]==("b4" if name=="MIT_B4" else "b2")
             models[name]=model,state["config"]
             del state
         model,settings=models[name]
@@ -103,7 +124,7 @@ def main():
         del cache
         if index%200==199:
             print(index+1,flush=True)
-    reference="F4" if final else "A"
+    reference="M7" if b4 else "F4" if final else "A"
     baseline=metrics[reference].summary()["image_miou"]
     checks={}
     if final:
@@ -113,6 +134,8 @@ def main():
         # Each bootstrap draw uses identical image indices for both paired methods.
         draws=np.random.default_rng(42).integers(len(pairs),size=(5000,len(pairs)),dtype=np.int32)
         ref_scores=np.array([r["miou"] for r in metrics[reference].per_image])
+    elif b4:
+        assert abs(baseline-0.66452)<1e-4,baseline
     else:
         assert abs(baseline-0.653394063880451)<1e-5,baseline
     rows=[]

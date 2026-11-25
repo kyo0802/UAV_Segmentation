@@ -1,0 +1,4 @@
+m7_config: configs/fusion_final.yaml
+b4_checkpoint: outputs/checkpoints/20261124T171931Z_b10_mitb4_512_80ep_3be4d9/best.pt
+reference_run: outputs/logs/20261125T062438Z_fusion_b4_c10e50
+absolute_tolerance: 0.0001
