@@ -1,0 +1,53 @@
+{
+  "calibration": {
+    "image_miou": {
+      "expected": 0.6778895103255839,
+      "observed": 0.6778895103255839,
+      "passed": true
+    },
+    "global_miou": {
+      "expected": 0.8060950871675303,
+      "observed": 0.8060950871675303,
+      "passed": true
+    },
+    "pixel_accuracy": {
+      "expected": 0.9363915763888889,
+      "observed": 0.9363915763888889,
+      "passed": true
+    }
+  },
+  "holdout": {
+    "image_miou": {
+      "expected": 0.6667067077929678,
+      "observed": 0.6667067077929678,
+      "passed": true
+    },
+    "global_miou": {
+      "expected": 0.8009991812463917,
+      "observed": 0.8009991812463917,
+      "passed": true
+    },
+    "pixel_accuracy": {
+      "expected": 0.9297025104166666,
+      "observed": 0.9297025104166666,
+      "passed": true
+    }
+  },
+  "all": {
+    "image_miou": {
+      "expected": 0.6750938096924298,
+      "observed": 0.6750938096924298,
+      "passed": true
+    },
+    "global_miou": {
+      "expected": 0.8040949306672092,
+      "observed": 0.8040949306672092,
+      "passed": true
+    },
+    "pixel_accuracy": {
+      "expected": 0.9347193098958333,
+      "observed": 0.9347193098958333,
+      "passed": true
+    }
+  }
+}

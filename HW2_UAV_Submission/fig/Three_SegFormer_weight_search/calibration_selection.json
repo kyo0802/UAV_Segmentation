@@ -1,0 +1,24 @@
+{
+  "weights": {
+    "b2_percent": 30,
+    "b4_percent": 0,
+    "residual_b4_percent": 70
+  },
+  "by_model_count": {
+    "1": {
+      "b2_percent": 0,
+      "b4_percent": 0,
+      "residual_b4_percent": 100
+    },
+    "2": {
+      "b2_percent": 30,
+      "b4_percent": 0,
+      "residual_b4_percent": 70
+    },
+    "3": {
+      "b2_percent": 20,
+      "b4_percent": 10,
+      "residual_b4_percent": 70
+    }
+  }
+}

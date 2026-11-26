@@ -1,0 +1,6 @@
+{
+  "source": "outputs\\checkpoints\\20261125T182208Z_swin_upernet_residual_144257\\epoch_077.pt",
+  "image_miou": 0.6743255858843114,
+  "train_images": 128,
+  "validation_images": 200
+}

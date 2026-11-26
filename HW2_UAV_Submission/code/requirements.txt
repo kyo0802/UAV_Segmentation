@@ -1,0 +1,8 @@
+torch>=2.6,<3
+torchvision>=0.21,<1
+numpy>=1.26,<3
+Pillow>=10,<13
+PyYAML>=6,<7
+matplotlib>=3.8,<4
+jupyterlab>=4,<5
+ipykernel>=6,<8

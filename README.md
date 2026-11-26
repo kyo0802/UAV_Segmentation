@@ -23,3 +23,29 @@
 新環境可先依 [requirements.txt](requirements.txt) 安裝套件，正式訓練需要可用的 CUDA 版 PyTorch 與 torchvision。請從專案根目錄啟動。
 
 [先前的本機驗證報告](outputs/logs/local_validation/report.md)
+
+## Swin-B UPerNet Residual
+
+在專案根目錄的 PowerShell 執行。模型與訓練參數見 [Swin-B 設定](configs/swin_upernet_residual.yaml)。
+
+```powershell
+uv pip install --python .venv/Scripts/python.exe "transformers==4.51.3"
+.\.venv\Scripts\python.exe swin_upernet.py prepare
+.\.venv\Scripts\python.exe swin_upernet.py show-config
+.\.venv\Scripts\python.exe -u swin_upernet.py run
+```
+
+`prepare` 下載並驗證完整 ADE20K checkpoint。 `run` 接續完成 100 輪訓練、M7 checkpoint 選擇、alpha 搜尋及 Kaggle RLE 匯出。輸出路徑會印在終端，也會寫入融合目錄的 `artifacts.json`。
+
+需要分段執行時，可使用以下指令。將變數指定為前一階段印出的對應路徑。
+
+```powershell
+.\.venv\Scripts\python.exe -u swin_upernet.py train
+.\.venv\Scripts\python.exe -u swin_upernet.py evaluate --training-run $trainingRun
+$checkpoint = (Get-Content "$m7Run/best_checkpoint.json" -Raw | ConvertFrom-Json).checkpoint
+.\.venv\Scripts\python.exe -u swin_upernet.py ensemble --checkpoint $checkpoint
+.\.venv\Scripts\python.exe -u swin_upernet.py submit --selection "$ensembleRun/best_ensemble.json"
+.\.venv\Scripts\python.exe -u swin_upernet.py submit --checkpoint $checkpoint --alpha 1.0
+```
+
+已有 `last.pt` 的訓練可用 `run --resume $trainingRun` 續接，完成後自動執行其餘階段。單獨接續已完成訓練的後三階段可用 `finish --training-run $trainingRun`。

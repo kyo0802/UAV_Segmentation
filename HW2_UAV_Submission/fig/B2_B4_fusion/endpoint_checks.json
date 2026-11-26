@@ -1,0 +1,36 @@
+{
+  "b2_m7": {
+    "status": "passed",
+    "metrics": {
+      "image_miou": {
+        "expected": 0.6645230638770517,
+        "observed": 0.6645230638770517,
+        "passed": true
+      },
+      "global_miou": {
+        "expected": 0.7932914180353989,
+        "observed": 0.7932914180353989,
+        "passed": true
+      }
+    }
+  },
+  "b4_512_hflip": {
+    "status": "passed",
+    "metrics": {
+      "image_miou": {
+        "expected": 0.6603829907311984,
+        "observed": 0.6603829907311984,
+        "passed": true
+      },
+      "global_miou": {
+        "expected": 0.7984367054664152,
+        "observed": 0.7984367054664152,
+        "passed": true
+      }
+    }
+  },
+  "b4_m7": {
+    "status": "unverified",
+    "reason": "No independent B4 five-view M7 reference supplied"
+  }
+}

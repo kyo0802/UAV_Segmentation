@@ -1,0 +1,27 @@
+base_config: configs/segformer_b10_mitb4_512_80ep.yaml
+pretrained:
+  repo: openmmlab/upernet-swin-base
+  revision: main
+  directory: outputs/pretrained/upernet-swin-base
+  sha256: 8f82b8621994c5dd6d3b4d89477a62aa8902220c4b12d778745ebac68fcc0bb7
+historical_config: configs/cross_model_m7.yaml
+overrides:
+  experiment: SwinB_UPerNet_Residual_100ep
+  image_size: 512
+  seed: 42
+  model:
+    name: swin_upernet_residual
+    variant: base
+    gradient_checkpointing: true
+  training:
+    epochs: 100
+    batch_size: 2
+    accumulation: 2
+    encoder_lr: 0.00006
+    decoder_lr: 0.0001
+    new_lr: 0.0003
+    weight_decay: 0.01
+    warmup_epochs: 5
+    clip_grad: 1.0
+    mixed_precision: true
+    auxiliary_weight: 0.4

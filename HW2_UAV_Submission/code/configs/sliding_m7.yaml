@@ -1,0 +1,9 @@
+postprocess_run: outputs/logs/20261125T091537Z_m7_postprocess_study_fa85d2
+tiles:
+  S1: {size: 512, overlap: 0.25}
+  S2: {size: 512, overlap: 0.50}
+  S3: {size: 384, overlap: 0.25}
+  S4: {size: 384, overlap: 0.50}
+alphas: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 1.0]
+gaussian_sigma_fraction: 0.125
+baseline_absolute_tolerance: 0.000001

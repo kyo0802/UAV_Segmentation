@@ -1,0 +1,53 @@
+model:
+  name: segformer
+  variant: b2
+  pretrained: false
+  encoder_weights: null
+image_size: 512
+training:
+  epochs: 40
+  batch_size: 2
+  accumulation: 2
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_epochs: 3
+  clip_grad: 1.0
+  patience: 15
+  mixed_precision: true
+loss:
+  name: ce_dice
+  dice_weight: 0.5
+  class_weights: null
+seed: 42
+split_seed: 42
+val_fraction: 0.2
+normalize: true
+workers: 0
+device: cuda
+allow_full_cpu: false
+development_limit: 200
+experiment: B4
+augmentation:
+  hflip: 0.5
+  vflip: 0.0
+  geometry_probability: 0.0
+  rotation: 0
+  scale:
+  - 1.0
+  - 1.0
+  crop_fraction: 1.0
+  color_probability: 0.5
+  color_jitter: 0.1
+  brightness_contrast: 0.15
+  noise_std: 0.0
+  fog_probability: 0.0
+  native_crop_probability: 0.35
+  native_crop_min_fraction: 0.8
+inference:
+  tile_size: null
+  overlap: 0.25
+  hflip: false
+  vflip: false
+  scales:
+  - 1.0
+ensemble: []

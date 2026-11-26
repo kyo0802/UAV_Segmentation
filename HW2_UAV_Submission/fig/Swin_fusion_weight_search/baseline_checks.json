@@ -1,0 +1,17 @@
+{
+  "image_miou": {
+    "expected": 0.686105694467945,
+    "observed": 0.686105694467945,
+    "passed": true
+  },
+  "global_miou": {
+    "expected": 0.8153023049672168,
+    "observed": 0.8153023049672168,
+    "passed": true
+  },
+  "pixel_accuracy": {
+    "expected": 0.9413734713541667,
+    "observed": 0.9413734713541667,
+    "passed": true
+  }
+}

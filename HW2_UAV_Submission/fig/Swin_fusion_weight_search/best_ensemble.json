@@ -1,0 +1,9 @@
+{
+  "alpha": 0.6,
+  "checkpoint": "C:\\Users\\smile\\Desktop\\UAV\\outputs\\checkpoints\\20261125T182208Z_swin_upernet_residual_144257\\epoch_077.pt",
+  "holdout_vs_baseline": {
+    "delta_pp": 1.2825806518835259,
+    "ci95_low_pp": 0.8138912393207837,
+    "ci95_high_pp": 1.765535298983156
+  }
+}

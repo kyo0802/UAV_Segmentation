@@ -1,0 +1,6 @@
+{
+  "training": "C:\\Users\\smile\\Desktop\\UAV\\outputs\\logs\\20261125T182208Z_swin_upernet_residual_144257",
+  "m7": "C:\\Users\\smile\\Desktop\\UAV\\outputs\\logs\\20261126T034616Z_swin_m7_evaluate_04aec1",
+  "ensemble": "C:\\Users\\smile\\Desktop\\UAV\\outputs\\logs\\20261126T035953Z_swin_m7_ensemble_93bffb",
+  "submission": "C:\\Users\\smile\\Desktop\\UAV\\outputs\\submissions\\20261126T042824Z_swin_m7_submit_7bd484\\submission.csv"
+}

@@ -1,0 +1,20 @@
+{
+  "mode": "full",
+  "dataset": "official",
+  "model": "segformer",
+  "variant": "b4",
+  "experiment": "B11_mitb4_boundary_ce_20ep",
+  "seed": 42,
+  "epochs": 20,
+  "training_images": 3200,
+  "validation_images": 800,
+  "image_size": 512,
+  "batch_size": 2,
+  "best_epoch": 15,
+  "image_miou": 0.6577432951742039,
+  "global_miou": 0.8021095358047174,
+  "elapsed_seconds": 5548.4626559,
+  "peak_cuda_bytes": 3957042176,
+  "finished_at_utc": "2026-11-25T09:13:38.935826+00:00",
+  "evaluation_size": "configured input resolution"
+}

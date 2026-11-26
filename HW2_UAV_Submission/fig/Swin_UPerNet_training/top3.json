@@ -1,0 +1,17 @@
+[
+  {
+    "epoch": 77,
+    "image_miou": 0.673009752432198,
+    "file": "epoch_077.pt"
+  },
+  {
+    "epoch": 68,
+    "image_miou": 0.6727991867735372,
+    "file": "epoch_068.pt"
+  },
+  {
+    "epoch": 66,
+    "image_miou": 0.6726890380743339,
+    "file": "epoch_066.pt"
+  }
+]

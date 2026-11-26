@@ -1,0 +1,4 @@
+epoch,checkpoint,training_validation_image_miou,m7_calibration_image_miou,m7_calibration_global_miou
+77,C:\Users\smile\Desktop\UAV\outputs\checkpoints\20261125T182208Z_swin_upernet_residual_144257\epoch_077.pt,0.673009752432198,0.6967225262022482,0.8048952419516682
+68,C:\Users\smile\Desktop\UAV\outputs\checkpoints\20261125T182208Z_swin_upernet_residual_144257\epoch_068.pt,0.6727991867735372,0.6962217113797997,0.8037964760848151
+66,C:\Users\smile\Desktop\UAV\outputs\checkpoints\20261125T182208Z_swin_upernet_residual_144257\epoch_066.pt,0.6726890380743339,0.6960567694785933,0.8026099948947614

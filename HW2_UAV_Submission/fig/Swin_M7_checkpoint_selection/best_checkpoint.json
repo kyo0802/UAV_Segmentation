@@ -1,0 +1,7 @@
+{
+  "epoch": 77,
+  "checkpoint": "C:\\Users\\smile\\Desktop\\UAV\\outputs\\checkpoints\\20261125T182208Z_swin_upernet_residual_144257\\epoch_077.pt",
+  "training_validation_image_miou": 0.673009752432198,
+  "m7_calibration_image_miou": 0.6967225262022482,
+  "m7_calibration_global_miou": 0.8048952419516682
+}

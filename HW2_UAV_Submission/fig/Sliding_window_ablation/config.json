@@ -1,0 +1,76 @@
+{
+  "config": {
+    "postprocess_run": "outputs/logs/20261125T091537Z_m7_postprocess_study_fa85d2",
+    "tiles": {
+      "S1": {
+        "size": 512,
+        "overlap": 0.25
+      },
+      "S2": {
+        "size": 512,
+        "overlap": 0.5
+      },
+      "S3": {
+        "size": 384,
+        "overlap": 0.25
+      },
+      "S4": {
+        "size": 384,
+        "overlap": 0.5
+      }
+    },
+    "alphas": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      1.0
+    ],
+    "gaussian_sigma_fraction": 0.125,
+    "baseline_absolute_tolerance": 1e-06
+  },
+  "checkpoints": {
+    "b2": "outputs/checkpoints/20261123T185356Z_b7_pretrained_512_80ep_89b545/best.pt",
+    "b4": "outputs/checkpoints/20261124T171931Z_b10_mitb4_512_80ep_3be4d9/best.pt"
+  },
+  "m7": {
+    "methods": {
+      "M7": {
+        "F0": 0.36,
+        "R640": 0.12,
+        "R768": 0.12,
+        "S576": 0.2,
+        "S640": 0.2
+      }
+    },
+    "views": {
+      "F0": [
+        "B7",
+        512,
+        512
+      ],
+      "R640": [
+        "B7",
+        640,
+        480
+      ],
+      "R768": [
+        "B7",
+        768,
+        576
+      ],
+      "S576": [
+        "B7",
+        576,
+        576
+      ],
+      "S640": [
+        "B7",
+        640,
+        640
+      ]
+    }
+  }
+}

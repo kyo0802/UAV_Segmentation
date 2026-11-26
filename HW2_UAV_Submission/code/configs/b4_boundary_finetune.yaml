@@ -1,0 +1,16 @@
+base_config: outputs/logs/20261124T171931Z_b10_mitb4_512_80ep_3be4d9/config.yaml
+overrides:
+  experiment: B11_mitb4_boundary_ce_20ep
+  initial_checkpoint: outputs/checkpoints/20261124T171931Z_b10_mitb4_512_80ep_3be4d9/best.pt
+  model:
+    pretrained: false
+  training:
+    epochs: 20
+    patience: 20  # Allow all 20 epochs even when the best score occurs early.
+    learning_rate: 0.00001
+    warmup_epochs: 1
+  loss:
+    name: boundary_ce_dice
+    boundary_weight: 2.0
+    interior_weight: 1.0
+    dice_weight: 0.5

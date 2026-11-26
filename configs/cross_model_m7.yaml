@@ -2,3 +2,8 @@ m7_config: configs/fusion_final.yaml
 b4_checkpoint: outputs/checkpoints/20261124T171931Z_b10_mitb4_512_80ep_3be4d9/best.pt
 reference_run: outputs/logs/20261125T062438Z_fusion_b4_c10e50
 absolute_tolerance: 0.0001
+three_model:
+  residual_checkpoint: outputs/checkpoints/20261125T134303Z_b4_highres_residual_40ep_833c6b/best.pt
+  partition_run: outputs/logs/20261125T091537Z_m7_postprocess_study_fa85d2
+  baseline_run: outputs/logs/20261125T171139Z_cross_model_m7_evaluate_2a30ba
+  absolute_tolerance: 0.000001

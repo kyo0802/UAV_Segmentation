@@ -1,0 +1,108 @@
+{
+  "method": {
+    "tile": "global",
+    "model": "fusion",
+    "alpha": 0.0,
+    "post": true
+  },
+  "raw_sliding_winner": {
+    "tile": "S2",
+    "model": "fusion",
+    "alpha": 0.2,
+    "post": false
+  },
+  "config": {
+    "postprocess_run": "outputs/logs/20261125T091537Z_m7_postprocess_study_fa85d2",
+    "tiles": {
+      "S1": {
+        "size": 512,
+        "overlap": 0.25
+      },
+      "S2": {
+        "size": 512,
+        "overlap": 0.5
+      },
+      "S3": {
+        "size": 384,
+        "overlap": 0.25
+      },
+      "S4": {
+        "size": 384,
+        "overlap": 0.5
+      }
+    },
+    "alphas": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      1.0
+    ],
+    "gaussian_sigma_fraction": 0.125,
+    "baseline_absolute_tolerance": 1e-06
+  },
+  "params": {
+    "weights": [
+      0.8,
+      0.9,
+      0.8,
+      1.0,
+      1.1,
+      1.0,
+      1.0,
+      1.2,
+      1.3,
+      1.1,
+      1.6,
+      1.7,
+      1.0,
+      1.0,
+      2.0,
+      2.0
+    ],
+    "thresholds": [
+      0.0,
+      0.1,
+      0.65,
+      0.1,
+      0.25,
+      0.2,
+      0.2,
+      0.1,
+      0.3,
+      0.2,
+      0.4,
+      0.3,
+      0.3,
+      0.25,
+      0.1,
+      0.1
+    ],
+    "global_threshold": 0.25
+  },
+  "fusion_source": {
+    "fusion_run": "outputs/logs/20261125T065030Z_cross_model_m7_evaluate_d71c9a",
+    "b2_percent": 40,
+    "split_seed": 42,
+    "calibration_images": 600,
+    "holdout_images": 200,
+    "global_threshold_percent": [
+      0,
+      40,
+      5
+    ],
+    "class_threshold_percent": [
+      10,
+      70,
+      5
+    ],
+    "weight_percent": [
+      50,
+      200,
+      10
+    ],
+    "max_coordinate_passes": 3
+  }
+}

@@ -9,9 +9,10 @@ import yaml
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("show-config", "train"))
+    parser.add_argument("--config", type=Path, default=Path("configs/b4_boundary_finetune.yaml"))
     args = parser.parse_args()
     root = Path.cwd()
-    spec = yaml.safe_load((root / "configs/b4_boundary_finetune.yaml").read_text(encoding="utf-8"))
+    spec = yaml.safe_load((root / args.config).read_text(encoding="utf-8"))
     base = yaml.safe_load((root / spec["base_config"]).read_text(encoding="utf-8"))
     for key, value in spec["overrides"].items():
         if isinstance(value, dict):
@@ -35,3 +36,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

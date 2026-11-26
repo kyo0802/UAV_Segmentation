@@ -1,0 +1,20 @@
+{
+  "mode": "full",
+  "dataset": "official",
+  "model": "segformer",
+  "variant": "b2",
+  "experiment": null,
+  "seed": 42,
+  "epochs": 40,
+  "training_images": 3200,
+  "validation_images": 800,
+  "image_size": 512,
+  "batch_size": 2,
+  "best_epoch": 40,
+  "image_miou": 0.5042732670857779,
+  "global_miou": 0.6252088019631381,
+  "elapsed_seconds": 10662.738877199998,
+  "peak_cuda_bytes": 2472002560,
+  "finished_at_utc": "2026-11-22T15:21:00.875118+00:00",
+  "evaluation_size": "configured input resolution"
+}

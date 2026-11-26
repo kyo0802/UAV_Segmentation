@@ -63,8 +63,9 @@ def load_members(n, checkpoints, spec, split):
     for variant, path in checkpoints.items():
         model, state = n.load_trained(Path(path), "cuda", "official")
         config = state["config"]
+        expected_variant = "b4" if variant == "residual_b4" else variant
         if (state["mode"] != "full" or state["split"] != split
-                or config["model"]["variant"] != variant or config["model"]["name"] != "segformer"):
+                or config["model"]["variant"] != expected_variant or config["model"]["name"] != "segformer"):
             raise ValueError(f"Unexpected model or validation split in {path}")
         views = []
         for name, weight in weights.items():

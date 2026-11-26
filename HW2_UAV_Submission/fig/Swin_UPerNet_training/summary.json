@@ -1,0 +1,11 @@
+{
+  "epochs": 100,
+  "best_epoch": 77,
+  "image_miou": 0.673009752432198,
+  "eval_size": [
+    800,
+    600
+  ],
+  "elapsed_seconds": 33817.14846809999,
+  "peak_cuda_bytes": 3694774272
+}

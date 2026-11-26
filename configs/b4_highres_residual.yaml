@@ -1,0 +1,12 @@
+base_config: outputs/logs/20261124T171931Z_b10_mitb4_512_80ep_3be4d9/config.yaml
+overrides:
+  experiment: B4_highres_residual_40ep
+  initial_checkpoint: outputs/checkpoints/20261124T171931Z_b10_mitb4_512_80ep_3be4d9/best.pt
+  model: {pretrained: false, high_resolution_residual: true}
+  training:
+    epochs: 40
+    patience: 40
+    batch_size: 2
+    learning_rate: 0.00001
+    refinement_lr: 0.0001
+    warmup_epochs: 3

@@ -1,0 +1,11 @@
+{
+  "source": "outputs\\pretrained\\upernet-swin-base\\model.safetensors",
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "mismatched_shapes": {},
+  "replaced_classifiers": [
+    "decode_head.classifier",
+    "auxiliary_head.classifier"
+  ],
+  "checkpoint_tensors": 535
+}

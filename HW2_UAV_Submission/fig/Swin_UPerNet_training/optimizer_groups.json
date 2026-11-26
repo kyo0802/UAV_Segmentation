@@ -1,0 +1,44 @@
+[
+  {
+    "name": "encoder_decay",
+    "lr": 6e-05,
+    "weight_decay": 0.01,
+    "tensor_count": 148,
+    "parameter_count": 86513664
+  },
+  {
+    "name": "encoder_no_decay",
+    "lr": 6e-05,
+    "weight_decay": 0.0,
+    "tensor_count": 281,
+    "parameter_count": 366712
+  },
+  {
+    "name": "decoder_decay",
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "tensor_count": 13,
+    "parameter_count": 34406400
+  },
+  {
+    "name": "decoder_no_decay",
+    "lr": 0.0001,
+    "weight_decay": 0.0,
+    "tensor_count": 26,
+    "parameter_count": 12800
+  },
+  {
+    "name": "new_decay",
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "tensor_count": 7,
+    "parameter_count": 83296
+  },
+  {
+    "name": "new_no_decay",
+    "lr": 0.0003,
+    "weight_decay": 0.0,
+    "tensor_count": 7,
+    "parameter_count": 208
+  }
+]

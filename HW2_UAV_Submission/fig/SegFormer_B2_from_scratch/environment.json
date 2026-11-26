@@ -1,0 +1,36 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.8",
+  "torch": "2.11.0+cu128",
+  "cuda_build": "12.8",
+  "cuda_available": true,
+  "cuda_devices": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 5070 Ti",
+      "vram_total_bytes": 17066360832,
+      "vram_free_bytes": 14209253376
+    }
+  ],
+  "nvidia_smi_devices": [],
+  "package_versions": {
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.5.4",
+    "Pillow": "12.3.0",
+    "PyYAML": "6.0.4",
+    "matplotlib": "3.11.2"
+  },
+  "logical_cpus": 16,
+  "system_memory_bytes": 33996550144,
+  "activation_bytes_per_image_heuristic": 1556925645,
+  "batch_activation_bytes_heuristic": 3113851290,
+  "model_and_workspace_reserve_bytes_heuristic": 1073741824,
+  "device": "cuda",
+  "batch_size": 2,
+  "first_native_image_hw": [
+    600,
+    800
+  ],
+  "entrypoint": "UAV_Segmentation.ipynb",
+  "started_at_utc": "2026-11-22T12:23:18.132916+00:00"
+}

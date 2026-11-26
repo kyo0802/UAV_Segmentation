@@ -1,0 +1,507 @@
+{
+  "method": "joint",
+  "params": {
+    "weights": [
+      0.8,
+      0.9,
+      0.8,
+      1.0,
+      1.1,
+      1.0,
+      1.0,
+      1.2,
+      1.3,
+      1.1,
+      1.6,
+      1.7,
+      1.0,
+      1.0,
+      2.0,
+      2.0
+    ],
+    "thresholds": [
+      0.0,
+      0.1,
+      0.65,
+      0.1,
+      0.25,
+      0.2,
+      0.2,
+      0.1,
+      0.3,
+      0.2,
+      0.4,
+      0.3,
+      0.3,
+      0.25,
+      0.1,
+      0.1
+    ],
+    "global_threshold": 0.25
+  },
+  "config": {
+    "fusion_run": "outputs/logs/20261125T065030Z_cross_model_m7_evaluate_d71c9a",
+    "b2_percent": 40,
+    "split_seed": 42,
+    "calibration_images": 600,
+    "holdout_images": 200,
+    "global_threshold_percent": [
+      0,
+      40,
+      5
+    ],
+    "class_threshold_percent": [
+      10,
+      70,
+      5
+    ],
+    "weight_percent": [
+      50,
+      200,
+      10
+    ],
+    "max_coordinate_passes": 3
+  },
+  "independent": [
+    {
+      "parameter": "global_threshold",
+      "label": null,
+      "value": 0.3
+    },
+    {
+      "parameter": "weights",
+      "label": 0,
+      "value": 0.8
+    },
+    {
+      "parameter": "weights",
+      "label": 1,
+      "value": 0.9
+    },
+    {
+      "parameter": "weights",
+      "label": 2,
+      "value": 0.7
+    },
+    {
+      "parameter": "weights",
+      "label": 3,
+      "value": 1.0
+    },
+    {
+      "parameter": "weights",
+      "label": 4,
+      "value": 1.2
+    },
+    {
+      "parameter": "weights",
+      "label": 5,
+      "value": 1.1
+    },
+    {
+      "parameter": "weights",
+      "label": 6,
+      "value": 1.0
+    },
+    {
+      "parameter": "weights",
+      "label": 7,
+      "value": 1.3
+    },
+    {
+      "parameter": "weights",
+      "label": 8,
+      "value": 1.3
+    },
+    {
+      "parameter": "weights",
+      "label": 9,
+      "value": 1.5
+    },
+    {
+      "parameter": "weights",
+      "label": 10,
+      "value": 0.8
+    },
+    {
+      "parameter": "weights",
+      "label": 11,
+      "value": 1.6
+    },
+    {
+      "parameter": "weights",
+      "label": 12,
+      "value": 1.0
+    },
+    {
+      "parameter": "weights",
+      "label": 13,
+      "value": 1.3
+    },
+    {
+      "parameter": "weights",
+      "label": 14,
+      "value": 2.0
+    },
+    {
+      "parameter": "weights",
+      "label": 15,
+      "value": 2.0
+    },
+    {
+      "parameter": "thresholds",
+      "label": 0,
+      "value": 0.0
+    },
+    {
+      "parameter": "thresholds",
+      "label": 1,
+      "value": 0.35
+    },
+    {
+      "parameter": "thresholds",
+      "label": 2,
+      "value": 0.25
+    },
+    {
+      "parameter": "thresholds",
+      "label": 3,
+      "value": 0.35
+    },
+    {
+      "parameter": "thresholds",
+      "label": 4,
+      "value": 0.3
+    },
+    {
+      "parameter": "thresholds",
+      "label": 5,
+      "value": 0.3
+    },
+    {
+      "parameter": "thresholds",
+      "label": 6,
+      "value": 0.4
+    },
+    {
+      "parameter": "thresholds",
+      "label": 7,
+      "value": 0.4
+    },
+    {
+      "parameter": "thresholds",
+      "label": 8,
+      "value": 0.35
+    },
+    {
+      "parameter": "thresholds",
+      "label": 9,
+      "value": 0.2
+    },
+    {
+      "parameter": "thresholds",
+      "label": 10,
+      "value": 0.4
+    },
+    {
+      "parameter": "thresholds",
+      "label": 11,
+      "value": 0.4
+    },
+    {
+      "parameter": "thresholds",
+      "label": 12,
+      "value": 0.2
+    },
+    {
+      "parameter": "thresholds",
+      "label": 13,
+      "value": 0.4
+    },
+    {
+      "parameter": "thresholds",
+      "label": 14,
+      "value": 0.0
+    },
+    {
+      "parameter": "thresholds",
+      "label": 15,
+      "value": 0.0
+    }
+  ],
+  "methods": {
+    "baseline": {
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "thresholds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "global_threshold": 0.0
+    },
+    "global": {
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "thresholds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "global_threshold": 0.3
+    },
+    "weight_single": {
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0
+      ],
+      "thresholds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "global_threshold": 0.0
+    },
+    "threshold_single": {
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "thresholds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "global_threshold": 0.0
+    },
+    "scaling": {
+      "weights": [
+        0.8,
+        0.9,
+        0.7,
+        1.0,
+        1.1,
+        1.0,
+        1.0,
+        1.2,
+        1.3,
+        1.1,
+        1.0,
+        1.4,
+        1.0,
+        1.0,
+        2.0,
+        2.0
+      ],
+      "thresholds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "global_threshold": 0.0
+    },
+    "class_threshold": {
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "thresholds": [
+        0.25,
+        0.35,
+        0.65,
+        0.2,
+        0.25,
+        0.15,
+        0.35,
+        0.1,
+        0.35,
+        0.2,
+        0.4,
+        0.15,
+        0.3,
+        0.4,
+        0.2,
+        0.2
+      ],
+      "global_threshold": 0.0
+    },
+    "joint": {
+      "weights": [
+        0.8,
+        0.9,
+        0.8,
+        1.0,
+        1.1,
+        1.0,
+        1.0,
+        1.2,
+        1.3,
+        1.1,
+        1.6,
+        1.7,
+        1.0,
+        1.0,
+        2.0,
+        2.0
+      ],
+      "thresholds": [
+        0.0,
+        0.1,
+        0.65,
+        0.1,
+        0.25,
+        0.2,
+        0.2,
+        0.1,
+        0.3,
+        0.2,
+        0.4,
+        0.3,
+        0.3,
+        0.25,
+        0.1,
+        0.1
+      ],
+      "global_threshold": 0.25
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "weights": {
+    "b2_percent": 30,
+    "b4_percent": 0,
+    "residual_b4_percent": 70
+  },
+  "selected_on": "calibration",
+  "all_rank_1": {
+    "b2_percent": 30,
+    "b4_percent": 0,
+    "residual_b4_percent": 70
+  },
+  "holdout_vs_baseline": {
+    "delta_pp": 0.0,
+    "ci95_low_pp": 0.0,
+    "ci95_high_pp": 0.0
+  },
+  "by_model_count": {
+    "1": {
+      "b2_percent": 0,
+      "b4_percent": 0,
+      "residual_b4_percent": 100
+    },
+    "2": {
+      "b2_percent": 30,
+      "b4_percent": 0,
+      "residual_b4_percent": 70
+    },
+    "3": {
+      "b2_percent": 20,
+      "b4_percent": 10,
+      "residual_b4_percent": 70
+    }
+  },
+  "baseline_checks": {
+    "image_miou": {
+      "expected": 0.686105694467945,
+      "observed": 0.686105694467945,
+      "passed": true
+    },
+    "global_miou": {
+      "expected": 0.8153023049672168,
+      "observed": 0.8153023049672168,
+      "passed": true
+    },
+    "pixel_accuracy": {
+      "expected": 0.9413734713541667,
+      "observed": 0.9413734713541667,
+      "passed": true
+    }
+  }
+}
